@@ -22,10 +22,7 @@
 - J’ai modifié l’URL de mon dépôt pour passer en SSH, testé la connexion et pu envoyer mon commit sans erreur.
 -
 - étapes réalisées :
-- J’ai commencé par vérifier que j’étais bien dans le bon dossier du projet à l’aide des commandes :
-   ```bash
-   pwd
-   ls
+- J’ai commencé par vérifier que j’étais bien dans le bon dossier du projet à l’aide des commandes : pwd et ls
 - ensuite, j'ai vérifié à quelle Git envoyait mes modifications : 
 git remote -v
 - adresse correspond à une conexion HTTPS, Or GitHub ne permet plus cette méthode, ce qui provoquait l’erreur rencontrée. pour corriger cela, j’ai changé l’adresse du dépôt afin d’utiliser SSH, 
