@@ -65,6 +65,16 @@ git add journal.md
 git commit -m "MAJ journal : ajout des explications et du récapilutatif"
 git push origin main
 
+# Correction de l’emplacement du tag
+
+J’avais déjà créé un tag il y a deux semaines, mais je viens de me rendre compte qu’il n’était pas au bon endroit.  
+Je pensais que le tag demandé dans le TD pouvait être fait sur n’importe quel dépôt, donc je l’avais créé sur mon dépôt d’essai “git-along”.  
+
+En relisant les consignes, j’ai compris qu’il fallait en réalité créer le tag sur le dépôt PPE1, celui lié au travail à rendre sur iSorbonne.  
+C’est pour cette raison que j’ai refait toutes les étapes de vérification et que j’ai déplacé le tag au bon endroit, c’est-à-dire sur le dépôt `Ezda13/PPE1`.
+
+Le tag s’appelle `gitinto` et correspond à la version finale du TD Git.  
+Je n’avais pas vu plus tôt qu’il fallait rendre le lien du tag au professeur, c’est pourquoi j’ai corrigé cela aujourd’hui.
 
 
 
