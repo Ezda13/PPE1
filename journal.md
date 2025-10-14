@@ -56,9 +56,14 @@ git remote set-url origin git@github.com:Ezda13/PPE1.git
 - verifier l'etat du projet : git status 
 - ajouter un fichier à l'enregistrement : git add journal.md
 - enregistrer les modifications localement : git commit -m "MAJ journal : mes séances de rattrapages" 
+
 - envoyer les changements sur GitHub : git push origin main
-
-
+- pour ouvrir gedit sur konsol : hulya@hulya:~/PPE1$ gedit journal.md
+- pour enregistrer la modification fait sur pc : 
+git status
+git add journal.md
+git commit -m "MAJ journal : ajout des explications et du récapilutatif"
+git push origin main
 
 
 
