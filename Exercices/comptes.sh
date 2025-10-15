@@ -1,13 +1,13 @@
-#!/bin/bash
-#Script pour compter le nombre de "Location" dans les fichiers .ann pour chaque année
-for annee in 2016 2017 2018
-do
-    # Vérifie que le dossier existe
-    if [ -d "$annee" ]; then
-        # Compte les lignes contenant "Location"
-        nb=$(grep -c "Location" $annee/*.ann 2>/dev/null | awk -F: '{s+=$2} END{print s}')
-        echo "$annee : $nb"
-    else
-        echo "$annee : dossier inexistant"
-    fi
-done
+
+echo "argument donné: $1"
+
+CHEMIN=$1
+
+echo "Nombre de lieux en 2016"
+cat cat 2016/*/*.ann | grep Location | wc -1 
+
+echo "Nombre de lieux en 2017"
+cat cat 2017/*/*.ann | grep Location | wc -1 
+
+echo "Nombre de lieux en 2018"
+cat cat 2018/*/*.ann | grep Location | wc -1 
