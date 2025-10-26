@@ -9,7 +9,6 @@ TYPE=$2
 # Dossier où sont les fichiers
 CHEMIN="$HOME/PPE1/Exercices/Exercice1/ann"
 
-# --- Vérifications ---
 # 1. Vérifie qu’on a bien deux arguments
 if [[ $# -ne 2 ]]; then
     echo "Usage : $0 <annee> <type>"
@@ -22,10 +21,9 @@ if [[ ! -d "$CHEMIN/$ANNEE" ]]; then
     exit 1
 fi
 
-# --- Traitement ---
 # On lit tous les fichiers .ann de l’année, on filtre sur le TYPE, et on compte les lignes
 NB=$(cat "$CHEMIN/$ANNEE"/*.ann | grep "$TYPE" | wc -l)
 
-# --- Résultat ---
+#  Résultat
 echo $NB
 
