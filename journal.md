@@ -260,4 +260,53 @@ Les résultats finaux ont ensuite été exportés dans un fichier TSV (tableau-f
 printf "id\turl\tcode\tcharset\tnb_mots\n" > ../tableaux/tableau-fr.tsv
 ./miniprojet.sh ../urls/fr.txt >> ../tableaux/tableau-fr.tsv
 
+08/11/2025
+##miniprojet2##
+ Vérification et correction du fichier tableau-fr.tsv
+Lors de la vérification du miniprojet 1, le script s’exécutait correctement à l’écran (les résultats s’affichaient dans le terminal), mais le fichier tableau-fr.tsv restait vide.
+Après analyse, le problème venait du fait que la sortie du script n’était pas redirigée vers un fichier : le script affichait les résultats, mais ne les enregistrait nulle part.
+Pour corriger cela, j’ai relancé le script en redirigeant la sortie standard vers le fichier TSV :
+./miniprojet.sh ../urls/fr.txt > ../tableaux/tableau-fr.tsv
+Cette commande a permis de générer correctement le fichier tableau-fr.tsv avec les résultats complets (URL, code HTTP, encodage et taille).
+La vérification avec la commande head -n 5 ../tableaux/tableau-fr.tsv a confirmé que le contenu était bien enregistré.
+Grâce à cette manipulation, le fichier TSV est désormais complet et prêt à être converti en HTML pour le miniprojet 2.
+
+Mini-projet 2 — Transformation TSV → HTML
+
+cd ~/PPE1/miniprojet
+touch tableaux/tableau-fr.html
+gedit tableaux/tableau-fr.html &
+    2. Structure de base du document.
+Rédaction manuelle du squelette :
+    • <!DOCTYPE html>, <html lang="fr">
+    • <head> avec <meta charset="UTF-8">, <title>Tableau des résultats – FR</title> et un style minimal (bordures, gris pour l’en-tête, alternance de lignes).
+    • <body> avec <h1>Tableau des résultats – FR</h1> et un <table>.
+    3. Création de l’en-tête de tableau (<thead>).
+À partir des colonnes observées dans le TSV, écriture :
+n° | URL | Code | Encodage | Taille
+→ transformées en :
+<thead>
+  <tr>
+   <th>n°</th><th>URL</th><th>Code</th><th>Encodage</th><th>Taille</th>
+  </tr>
+</thead>
+    4. Remplissage du corps (<tbody>).
+Conversion manuelle de plusieurs lignes du TSV : chaque tabulation devient une cellule <td>…</td>, et chaque ligne devient un <tr>…</tr>.
+Exemple :
+1<TAB>https://fr.wikipedia.org/wiki/Robot<TAB>200<TAB>UTF-8<TAB>5681
+→
+<tr>
+  <td>1</td><td>https://fr.wikipedia.org/wiki/Robot</td>
+  <td>200</td><td>UTF-8</td><td>5681</td>
+</tr>
+(Procédé répété pour ~10 lignes.)
+    5. Ouverture dans le navigateur (vérification visuelle).
+    • Première tentative erronée avec un mauvais nom (tableau.tableau-fr.html) → échec.
+    • Correction : ouverture avec le bon chemin ou via l’outil système :
+xdg-open tableaux/tableau-fr.html
+# ou
+firefox tableaux/tableau-fr.html
+→ Le tableau s’affiche correctement (entête grisée, bordures, 5 colonnes, 10 lignes).
+
+
 
