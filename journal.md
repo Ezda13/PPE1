@@ -260,7 +260,8 @@ Les résultats finaux ont ensuite été exportés dans un fichier TSV (tableau-f
 printf "id\turl\tcode\tcharset\tnb_mots\n" > ../tableaux/tableau-fr.tsv
 ./miniprojet.sh ../urls/fr.txt >> ../tableaux/tableau-fr.tsv
 
-08/11/2025
+##08/11/2025##
+
 ##miniprojet2##
  Vérification et correction du fichier tableau-fr.tsv
 Lors de la vérification du miniprojet 1, le script s’exécutait correctement à l’écran (les résultats s’affichaient dans le terminal), mais le fichier tableau-fr.tsv restait vide.
