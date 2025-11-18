@@ -3,43 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>Tableau des résultats – FR</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 6px; }
-    th { background-color: #f2f2f2; text-align: left; }
-    tbody tr:nth-child(even) { background-color: #fafafa; }
+    body { margin: 0; }  /* on laisse Bulma gérer le reste */
+    .url-cell {
+      max-width: 450px;
+      word-wrap: break-word;
+      white-space: normal;
+    }
   </style>
 </head>
 
-<body>
-  <h1>Tableau des résultats – FR</h1>
+<body class="has-background-light">
 
-  <table>
-    <thead>
-      <tr>
-        <th>n°</th>
-        <th>URL</th>
-        <th>Code</th>
-        <th>Encodage</th>
-        <th>Taille</th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <tr><td>1</td><td>https://fr.wikipedia.org/wiki/Robot</td><td>200</td><td>UTF-8</td><td>5681</td></tr>
-      <tr><td>2</td><td>https://fr.wikipedia.org/wiki/Robot_de_cuisine</td><td>200</td><td>UTF-8</td><td>1161</td></tr>
-      <tr><td>3</td><td>https://fr.wikipedia.org/wiki/Robot_d%27indexation</td><td>200</td><td>UTF-8</td><td>1765</td></tr>
-      <tr><td>4</td><td>https://fr.wikipedia.org/wiki/Bot_informatique</td><td>200</td><td>UTF-8</td><td>2583</td></tr>
-      <tr><td>5</td><td>https://fr.wikipedia.org/wiki/Atlas_(robot)</td><td>200</td><td>UTF-8</td><td>1167</td></tr>
-      <tr><td>6</td><td>https://roboty.magistry.fr</td><td>000</td><td>NA</td><td>NA</td></tr>
-      <tr><td>7</td><td>https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)</td><td>404</td><td>UTF-8</td><td>NA</td></tr>
-      <tr><td>8</td><td>https://fr.wiktionary.org/wiki/robot</td><td>200</td><td>UTF-8</td><td>4813</td></tr>
-      <tr><td>9</td><td>https://fr.wikipedia.org/wiki/Protocol_d%27exclusion_des_robots</td><td>200</td><td>UTF-8</td><td>1058</td></tr>
-      <tr><td>10</td><td>https://fr.wikipedia.org/wiki/Robotique</td><td>200</td><td>UTF-8</td><td>13025</td></tr>
-    </tbody>
-  </table>
-</body>
+  <section class="hero is-link is-small">
+    <div class="hero-body">
+      <p class="title">
+        Tableau des résultats – FR
+      </p>
+      <p class="subtitle">
+        Codes de réponse HTTP, encodage et taille des pages
+      </p>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+
+
+      <div class="box">
+        <h2 class="title is-4">Détail par URL</h2>
+
+        <table class="table is-striped is-hoverable is-fullwidth is-narrow">
+          <thead>
+            <tr>
+              <th>n°</th>
+              <th>URL</th>
+              <th>Code</th>
+              <th>Encodage</th>
+              <th>Taille</th>
+            </tr>
+          </thead>
+
+          <tbody>
+  <tr><td>1</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Robot" target="_blank">https://fr.wikipedia.org/wiki/Robot</a></td><td>200</td><td>UTF-8</td><td>5681</td></tr>
+
+  <tr><td>2</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Robot_de_cuisine" target="_blank">https://fr.wikipedia.org/wiki/Robot_de_cuisine</a></td><td>200</td><td>UTF-8</td><td>1161</td></tr>
+
+  <tr><td>3</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Robot_d%27indexation" target="_blank">https://fr.wikipedia.org/wiki/Robot_d%27indexation</a></td><td>200</td><td>UTF-8</td><td>1765</td></tr>
+
+  <tr><td>4</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Bot_informatique" target="_blank">https://fr.wikipedia.org/wiki/Bot_informatique</a></td><td>200</td><td>UTF-8</td><td>2583</td></tr>
+
+  <tr><td>5</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Atlas_(robot)" target="_blank">https://fr.wikipedia.org/wiki/Atlas_(robot)</a></td><td>200</td><td>UTF-8</td><td>1167</td></tr>
+
+  <tr><td>6</td><td class="url-cell"><a href="https://roboty.magistry.fr" target="_blank">https://roboty.magistry.fr</a></td><td>000</td><td>NA</td><td>NA</td></tr>
+
+  <tr><td>7</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)" target="_blank">https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)</a></td><td>404</td><td>UTF-8</td><td>NA</td></tr>
+
+  <tr><td>8</td><td class="url-cell"><a href="https://fr.wiktionary.org/wiki/robot" target="_blank">https://fr.wiktionary.org/wiki/robot</a></td><td>200</td><td>UTF-8</td><td>4813</td></tr>
+
+  <tr><td>9</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Protocol_d%27exclusion_des_robots" target="_blank">https://fr.wikipedia.org/wiki/Protocol_d%27exclusion_des_robots</a></td><td>200</td><td>UTF-8</td><td>1058</td></tr>
+
+  <tr><td>10</td><td class="url-cell"><a href="https://fr.wikipedia.org/wiki/Robotique" target="_blank">https://fr.wikipedia.org/wiki/Robotique</a></td><td>200</td><td>UTF-8</td><td>13025</td></tr>
+</tbody>
+
 </html>
-
 
