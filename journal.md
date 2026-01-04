@@ -311,3 +311,72 @@ firefox tableaux/tableau-fr.html
 
 
 
+## projet final ##
+# J1- 25/12/2025 #
+
+Dans le cadre du projet final du cours de Projet encadré (PPE), j’ai travaillé sur l’étude du mot culture en espagnol, à travers sa forme lexicale cultura. L’objectif était de constituer un corpus web représentatif permettant d’analyser les différents usages et sens de ce terme dans des contextes réels.
+
+Dans un premier temps, j’ai rejoint le dépôt GitHub commun du projet et mis en place un workflow de travail collaboratif. J’ai travaillé sur une branche dédiée, intitulée espagnol-cultura, afin de ne pas interférer avec le travail des autres membres du groupe. Cette organisation permet de garantir la traçabilité des modifications et d’intégrer le travail progressivement via des pull requests.
+
+J’ai ensuite constitué un corpus de 50 URLs en espagnol, stocké dans le fichier urls/corpus_es.txt. Les URLs ont été sélectionnées manuellement afin de garantir la qualité linguistique et thématique du corpus. J’ai privilégié des pages textuelles en espagnol issues de sources variées, principalement de la presse (rubriques culturelles de journaux espagnols), mais aussi de sites institutionnels et de plateformes de vulgarisation. La sélection des pages s’est appuyée sur différents sens du mot cultura, notamment le sens artistique et institutionnel (arts, littérature, cinéma), le sens anthropologique et social (identité, traditions, diversité culturelle), le sens éducatif (savoir, formation), ainsi que, de manière plus marginale, le sens agricole lié à l’étymologie du terme. 
+Pour garantir la cohérence linguistique du corpus, seules des pages en espagnol ont été retenues, en excluant les fichiers PDF, les pages trop courtes, les contenus multimédias et les résultats de recherche.
+
+Une fois le corpus finalisé, le fichier corpus_es.txt a été ajouté au dépôt via un commit explicite et poussé sur la branche dédiée. Une pull request a ensuite été créée afin de proposer l’intégration de ce corpus dans la branche principale du projet. À ce stade, le travail effectué constitue la base nécessaire à la suite du projet, qui consistera à développer un script de traitement automatique des pages web (récupération des pages, gestion de l’encodage, extraction du texte et des contextes autour du mot cultura).
+
+# J2- 27/12/2025 #
+
+Depuis la dernière entrée du journal, le travail a progressé au niveau collectif. nous avons commencé à développer un script commun dans le dossier programmes/, destiné à être utilisé pour l’ensemble des langues du projet. Ce script prend en entrée un fichier d’URLs, vérifie sa validité, puis parcourt les pages web afin de récupérer différentes informations techniques (code HTTP, encodage), d’extraire le contenu textuel et de compter les occurrences du mot étudié. Il est conçu comme un pipeline générique, indépendant de la langue, en vue de produire des données exploitables pour les tableaux et l’analyse finale.
+
+À ce stade, chaque membre du groupe travaille principalement sur sa partie (constitution du corpus et tests), tandis que le script commun est développé et affiné progressivement. Pour ma part, mon corpus espagnol (cultura) a été intégré au dépôt, et la prochaine étape consistera à tester ce script commun sur ce corpus afin d’en évaluer le fonctionnement et les limites pour l’espagnol, sans modifier le code existant dans un premier temps.
+
+Afin de faciliter le travail collectif et d’éviter la multiplication de branches temporaires, la branche dédiée à la constitution du corpus espagnol a été supprimée une fois le travail intégré et stabilisé. Le projet se poursuit désormais sur la branche principale (main), ce qui permet à l’ensemble des membres du groupe de travailler sur une base commune et à jour avant les phases de test et de validation du script commun.
+
+la premiere version du script commun a pu être exécuté avec succès sur le corpus espagnol. Les pages sont correctement lues et traitées (code HTTP, encodage).
+En revanche, aucune occurrence du mot cible n’est détectée à ce stade, ce qui s’explique par le fait que le mot recherché dans le script est actuellement paramétré pour une autre langue (français "culture"). Ce test a permis d’identifier la nécessité de rendre le mot cible paramétrable afin d’adapter le script aux différentes langues du projet.
+
+# J3- 28/12/2025 # 
+
+Dans la continuité de ce travail, j’ai poursuivi les tests du dépôt et des productions déjà générées afin de préparer les étapes d’analyse. Après avoir synchronisé le dépôt avec les dernières mises à jour effectuées par les autres membres du groupe (organisation des dossiers de sortie, tableaux, pages HTML et feuilles de style), j’ai pris en main les données textuelles produites par le script commun, notamment les fichiers de type dump textuel générés à partir des pages web.
+
+À partir de ces fichiers, j’ai travaillé sur la mise en place d’une visualisation exploratoire sous la forme d’un nuage de mots pour l’espagnol (un premier essaye). L’objectif était de vérifier que les textes extraits à partir des URLs pouvaient être réutilisés pour une analyse lexicale simple, indépendante du script principal. Pour cela, j’ai regroupé les contenus textuels correspondant au corpus espagnol et utilisé un script Python dédié afin de générer une première visualisation du vocabulaire le plus fréquent.
+
+Cette étape a permis de valider la chaîne complète allant de la constitution du corpus (URLs) à l’exploitation textuelle des données produites par le script commun. Le nuage de mots obtenu constitue un premier outil de comparaison possible entre les langues du projet, même s’il reste exploratoire à ce stade. Le script Python et l’image générée ont été ajoutés au dépôt afin de documenter cette étape et de permettre une reproduction ou une extension du travail pour les autres langues.
+
+La suite du travail consistera à généraliser cette approche aux corpus français et anglais, puis à réfléchir à l’articulation entre ces visualisations lexicales et les tableaux quantitatifs produits par le script commun, en vue de l’analyse finale.
+
+# J3- 29/12/2025 # 
+
+Dans la continuité de cette première exploration, j’ai ensuite élargi ce travail aux autres langues du projet afin d’assurer une cohérence méthodologique entre les corpus. J’ai d’abord repris le script commun en collaboration avec les productions existantes du groupe afin de corriger certains problèmes bloquants observés lors des premières exécutions (notamment l’absence ou la non-création de certains dossiers de sortie). Ces ajustements ont permis de garantir la génération complète et systématique des fichiers attendus pour chaque URL : pages HTML aspirées, dumps textuels, fichiers de concordances et tableaux récapitulatifs par langue.
+
+Une fois ces corrections effectuées, j’ai relancé le script commun sur l’ensemble des corpus (espagnol, anglais et français) afin d’obtenir des productions homogènes et comparables. Cette phase de relance a permis de vérifier la stabilité du script sur les trois langues, ainsi que la cohérence du nombre de fichiers générés par rapport au nombre d’URLs de chaque corpus. Les tableaux HTML correspondants ont été contrôlés via le site afin de valider le bon fonctionnement des liens internes (accès aux pages aspirées, dumps et concordances).
+
+Sur cette base stabilisée, j’ai repris le travail sur les nuages de mots en adoptant une approche plus structurée. Le premier script exploratoire a été remplacé par un script Python unique et paramétrable, capable de générer un nuage de mots pour chaque langue à partir des dumps textuels correspondants. Ce choix a été fait afin d’éviter la duplication de scripts quasi identiques et de garantir une meilleure reproductibilité du traitement. Les dossiers dédiés aux scripts et aux images de sortie ont été créés explicitement dans le dépôt afin de clarifier l’organisation du projet.
+
+Lors de cette étape, des problèmes d’encodage ont été identifiés pour le corpus français lors de la lecture des dumps textuels. Leur résolution a nécessité une gestion plus robuste de l’encodage dans le script Python, sans modifier les données sources produites par le script commun. Cette correction a permis de générer correctement les nuages de mots pour les trois langues, confirmant ainsi que les données textuelles extraites étaient exploitables de manière homogène.
+
+À ce stade, l’ensemble de la chaîne de traitement — de la collecte des URLs à la visualisation lexicale — est fonctionnelle pour les trois langues du projet. Ce travail m’a permis d’intervenir à la fois sur la vérification et l’amélioration des scripts, l’organisation du dépôt, le contrôle du site HTML et l’exploitation des données textuelles produites collectivement. Les nuages de mots constituent désormais un complément exploratoire aux tableaux quantitatifs, ouvrant la voie à une analyse comparative plus fine entre les langues dans la phase finale du projet.
+
+# J4 30/12/2025 #
+
+Lors de cette phase du projet, un travail de synchronisation du dépôt Git a été nécessaire en raison de modifications parallèles effectuées par plusieurs membres du groupe. Des divergences sont apparues entre la version locale et la version distante du dépôt, notamment autour du script principal, ce qui a provoqué des conflits lors des opérations de pull et de push.
+
+Afin de repartir sur une base stable, j’ai volontairement abandonné les modifications locales non nécessaires et réaligné mon dépôt sur la version distante validée par le groupe. Cette étape a permis de récupérer l’ensemble des avancées réalisées par mes camarades et d’assurer une cohérence du projet avant de poursuivre le travail. Elle a également permis de consolider ma compréhension du fonctionnement de Git en contexte collaboratif (gestion des conflits, synchronisation des branches et récupération d’une version distante stable).
+
+Après avoir identifié un problème d’affichage sur le site (absence de la barre de navigation sur les pages de tableaux en anglais et en espagnol), j’ai vérifié le fonctionnement global du site afin de confirmer que l’erreur provenait bien des fichiers HTML et non du script de génération. J’ai ensuite comparé la structure des pages fonctionnelles avec celles posant problème, ce qui m’a permis d’identifier une incohérence dans l’en-tête des tableaux. J’ai corrigé manuellement les fichiers HTML concernés afin d’uniformiser l’en-tête et de rétablir la navigation sur l’ensemble des pages. Cette intervention a permis de restaurer une cohérence visuelle et fonctionnelle entre toutes les pages du site.
+
+Dans la continuité du projet, j’ai testé le script de génération de nuages de mots sur le corpus espagnol à partir des fichiers de contextes produits par le script principal. Le nuage obtenu met logiquement en évidence le terme cultura, très fréquent dans les pages sélectionnées, ce qui confirme la cohérence du corpus et du filtrage effectué. La présence répétée de ce terme a été conservée volontairement, car elle reflète l’objet même du corpus et non une erreur de traitement. Cette étape a permis de valider le bon fonctionnement du script Python, l’organisation des dossiers (contextes / images) et la réutilisation des données textuelles pour une analyse lexicale exploratoire. Le nuage de mots en espagnol constitue ainsi un premier outil de comparaison avec les autres langues du projet.
+
+Puis j'ai intégré les nuages de mots au site en créant une page dédiée dans le dossier nuages, accessible depuis la barre de navigation. Les images des nuages ont été générées automatiquement à partir des contextes linguistiques en français, espagnol et anglais, puis reliées correctement via des chemins relatifs. Un ajustement de la taille des images a été nécessaire pour améliorer la lisibilité et l’harmonie visuelle de la page.
+
+# J5 02/01/2026 #
+
+Aujourd’hui, j’ai vérifié le bon affichage des nuages de mots sur le site. J’ai ensuite testé l’exécution des scripts afin de m’assurer qu’ils fonctionnent correctement. Enfin, j’ai corrigé les problèmes d’affichage des tableaux, notamment la largeur excessive due aux URL longues, afin d’améliorer la lisibilité.
+
+# J5 04/01/2026 # 
+
+En phase finale, j’ai observé une divergence entre le nombre d’URLs présentes dans le fichier corpus_es.txt et le nombre d’entrées générées dans le tableau espagnol. Après relance du script et vérification des sorties intermédiaires (aspirations, dumps et contextes), il apparaît que certaines URLs n’aboutissent pas à une extraction exploitable (échec de requête HTTP, contenu vide ou non traité correctement), ce qui entraîne leur exclusion implicite du tableau. Ce comportement n’a pas été modifié afin de préserver le fonctionnement réel du pipeline et de rendre visibles les limites du traitement automatique de données web. Cette vérification finale a permis de valider la robustesse globale du script et la cohérence des données affichées sur le site.
+
+Ce travail de projet m’a permis de suivre l’ensemble de la chaîne de traitement, depuis la constitution manuelle d’un corpus d’URLs jusqu’à l’exploitation et la visualisation des données textuelles produites automatiquement. En travaillant sur le corpus espagnol, j’ai pu tester concrètement la robustesse des scripts, identifier les limites liées à l’extraction web (URLs inaccessibles, contenus non exploitables) et ajuster les sorties sans modifier la logique globale du pipeline. L’intégration des tableaux, des contextes, des concordances et des nuages de mots au site final m’a également permis de relier traitement automatique et restitution des résultats. Ce projet a ainsi constitué une première mise en pratique cohérente des méthodes vues en cours, tout en soulignant les enjeux techniques réels du TAL appliqué à des données hétérogènes du web.
+
+
+
